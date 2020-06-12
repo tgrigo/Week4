@@ -17,18 +17,19 @@ while
 do
 if [[ $REPLY = $SecretNumber ]]; then
     echo
-    echo -e "\033[32mWoW thats a pretty good guess, well done !!!\033[0m"
+    # This was changed in week 5 with the command < sed -i '/echo /s/correct/Right/' ./GuessingGame.sh >
+    echo -e "\033[32mWoW thats a pretty good guess, it is Right !!!\033[0m"
     echo
     exit 0
 
 elif [[ $REPLY -lt $SecretNumber ]]; then
 echo
-echo -e "\033[31mSorry but its higher than that number !! Try Again\033[0m"
+echo -e "\033[31mSorry but its higher than $REPLY !! Try Again\033[0m"
 echo
 
 else [[ $REPLY -gt $SecretNumber ]]
 echo
-echo -e "\033[34mSorry but its lower than that number !! Try Again\033[0m"
+echo -e "\033[34mSorry but its lower than $REPLY !! Try Again\033[0m"
 echo
 
 fi
